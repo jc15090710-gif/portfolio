@@ -1,0 +1,112 @@
+/* A quiet, narrow, text-led artist site. Edit these variables to tune the mood. */
+:root {
+  --paper: #fffefa;
+  --ink: #292925;
+  --muted: #85847d;
+  --rule: #e6e4dc;
+  --accent: #8a4a3c;
+  --page-width: 690px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Noto Serif JP", serif; font-size: 13px; line-height: 2;
+  font-weight: 400; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a:hover { color: var(--accent); }
+button, input, select, textarea { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px;
+}
+.page-header, .page, .footer { width: min(var(--page-width), calc(100% - 40px)); margin-inline: auto; }
+.page-header { padding: 28px 0 15px; border-bottom: 1px solid var(--rule); }
+.site-name { display: inline-flex; align-items: baseline; gap: 12px; font-size: 17px; font-weight: 600; text-decoration: none; }
+.site-name span { color: var(--muted); font: 10px "DM Mono", monospace; letter-spacing: .02em; }
+.nav { display: flex; gap: 18px; margin-top: 9px; }
+.nav a { color: var(--muted); font: 10px "DM Mono", monospace; text-decoration: none; }
+.nav a:hover { color: var(--accent); }
+.menu-button { display: none; }
+.intro { padding: 45px 0 48px; }
+.small-label, .work-kind { color: var(--muted); font: 10px "DM Mono", monospace; letter-spacing: .05em; }
+.small-label { margin: 0 0 17px; }
+h1 { margin: 0 0 17px; font-size: clamp(24px, 5vw, 32px); line-height: 1.65; font-weight: 500; letter-spacing: .02em; }
+.intro-copy { margin-bottom: 27px; line-height: 2.25; }
+.intro-image { margin: 0; }
+.image-placeholder {
+  min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; background: #f0eee7; color: #77766f; text-align: center;
+}
+.image-placeholder span { font-size: 13px; }
+.image-placeholder small { font-size: 10px; }
+.intro-image figcaption { margin-top: 7px; text-align: right; color: var(--muted); font: 9px "DM Mono", monospace; }
+.section { padding: 31px 0 36px; border-top: 1px solid var(--rule); }
+h2 { display: flex; align-items: baseline; gap: 13px; margin: 0 0 22px; font: 15px "DM Mono", monospace; font-weight: 500; }
+h2 span { color: var(--muted); font: 10px "Noto Serif JP", serif; }
+.profile-body { max-width: 570px; }
+.profile-body p { margin: 0 0 9px; }
+.link-list { list-style: none; padding: 0; margin: 22px 0 0; }
+.link-list li { border-bottom: 1px dotted var(--rule); }
+.link-list li:first-child { border-top: 1px dotted var(--rule); }
+.link-list a { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; text-decoration: none; }
+.link-list a > span { color: var(--muted); font-size: 10px; }
+.edit-hint { color: #99978f; font-size: 10px; line-height: 1.8; }
+.latest-entry { display: grid; grid-template-columns: 90px 1fr; gap: 15px; padding: 13px 0; border-top: 1px dotted var(--rule); }
+.latest-entry:last-of-type { border-bottom: 1px dotted var(--rule); }
+.latest-entry time, .work-date, .log-list time { color: var(--muted); font: 10px "DM Mono", monospace; }
+.entry-title { margin: 0 0 2px; }
+.entry-copy { margin: 0; color: #6e6d66; font-size: 11px; }
+.entry-copy a { text-decoration: underline; }
+.work { display: grid; grid-template-columns: 190px 1fr; gap: 23px; padding: 0 0 27px; margin-bottom: 25px; border-bottom: 1px dotted var(--rule); }
+.work:last-of-type { margin-bottom: 0; }
+.work-visual { min-width: 0; }
+.cover-placeholder { min-height: 240px; display: flex; align-items: center; justify-content: center; color: rgba(41,41,37,.7); font-size: 11px; }
+.cover-one { background: #d8d6c9; }
+.cover-two { background: #ead9d4; }
+.work-description .work-kind { margin: 0 0 5px; }
+.work-description h3 { margin: 0 0 10px; font-size: 15px; font-weight: 500; line-height: 1.8; }
+.work-description p:not(.work-kind) { margin: 0 0 12px; color: #66655e; font-size: 11px; line-height: 2; }
+.plain-link { font-size: 11px; }
+.work-list, .log-list { list-style: none; margin: 0; padding: 0; }
+.work-list li { display: grid; grid-template-columns: 55px 1fr 20px; gap: 12px; padding: 12px 0; border-top: 1px dotted var(--rule); align-items: baseline; }
+.work-list li:last-child { border-bottom: 1px dotted var(--rule); }
+.work-list strong { font-weight: 500; }
+.work-list p { margin: 2px 0 0; color: var(--muted); font-size: 10px; }
+.work-list a { text-align: right; text-decoration: none; }
+.section-lead { margin: -9px 0 15px; color: #6e6d66; font-size: 11px; }
+.log-list li { display: grid; grid-template-columns: 80px 1fr; gap: 15px; padding: 7px 0; border-top: 1px dotted var(--rule); }
+.log-list li:last-child { border-bottom: 1px dotted var(--rule); }
+.contact > p { max-width: 620px; font-size: 11px; line-height: 2.1; }
+form { margin-top: 22px; }
+form label { display: block; margin: 15px 0 5px; font-size: 11px; }
+input, select, textarea {
+  width: 100%; border: 1px solid #dedcd3; border-radius: 0; background: #fffefa;
+  color: var(--ink); padding: 10px 11px; font-size: 12px;
+}
+textarea { resize: vertical; }
+form button { display: inline-block; margin-top: 15px; padding: 10px 18px; border: 1px solid var(--ink); background: transparent; cursor: pointer; font-size: 11px; }
+form button:hover { background: var(--ink); color: white; }
+.form-note { color: var(--muted); font-size: 10px !important; }
+.direct-mail { margin-top: 18px; }
+.footer { display: flex; justify-content: space-between; gap: 15px; padding: 20px 0 30px; border-top: 1px solid var(--rule); color: var(--muted); font: 9px "DM Mono", monospace; }
+.footer a { text-decoration: none; }
+@media (max-width: 560px) {
+  .page-header, .page, .footer { width: calc(100% - 32px); }
+  .page-header { position: relative; padding-top: 20px; }
+  .site-name { font-size: 16px; }
+  .site-name span { font-size: 9px; }
+  .menu-button { display: block; position: absolute; right: 0; top: 20px; border: 0; background: none; color: var(--muted); font: 10px "DM Mono", monospace; cursor: pointer; }
+  .menu-button span { margin-left: 4px; }
+  .nav { display: none; flex-wrap: wrap; gap: 8px 17px; padding-top: 10px; }
+  .nav.is-open { display: flex; }
+  .intro { padding: 34px 0 36px; }
+  .image-placeholder { min-height: 230px; }
+  .section { padding: 26px 0 30px; }
+  .work { grid-template-columns: 112px 1fr; gap: 14px; }
+  .cover-placeholder { min-height: 155px; }
+  .work-description h3 { font-size: 13px; }
+  .work-description p:not(.work-kind) { font-size: 10px; }
+  .latest-entry { grid-template-columns: 75px 1fr; gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
