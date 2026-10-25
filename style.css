@@ -26,9 +26,7 @@
 @media(max-width:700px){.roman-name{margin-left:8px;font-size:.68em}.twitter-bird{width:15px;height:15px}}
 
 /* Editorial typography, matching the feel of twililight without claiming exact typeface */
-.profile-copy h1,.work h3,.contact>.label,.section .label{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;font-weight:600;letter-spacing:.035em}
 .label small{font-family:"Noto Sans JP",sans-serif;letter-spacing:0}
-.profile-copy h1 .roman-name{font-family:Georgia,serif;font-weight:400}
 .profile-copy p{max-width:34em}
 .social-svg{width:17px;height:17px;display:inline-block;flex:0 0 17px;overflow:visible;vertical-align:middle}
 .social a{display:inline-flex;align-items:center;white-space:nowrap;gap:7px;min-height:37px}
@@ -50,3 +48,13 @@
 .form-privacy{font-size:11px;color:var(--muted);line-height:1.8}
 @media(max-width:700px){.gallery-item{width:180px}.gallery-item img{height:190px}.gallery-section{min-height:0}}
 @media(prefers-reduced-motion:reduce){.gallery-track{animation:none}.gallery-window{overflow-x:auto;mask-image:none}.gallery-group[aria-hidden="true"]{display:none}}
+
+/* Return to the earlier sans-serif type system while retaining all content and links. */
+.profile-copy h1,.work h3,.contact>.label,.section .label{font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;font-weight:600;letter-spacing:.02em}
+.profile-copy h1 .roman-name{font-family:"DM Mono",monospace;font-weight:500}
+.gallery-heading{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.gallery-heading .label{margin:0;flex-shrink:0}
+.gallery-heading .gallery-hint{margin:0;font-size:11px;line-height:1.8;color:var(--muted);max-width:650px}
+.gallery-link img{transition:filter .2s ease}
+.gallery-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:700px){.gallery-heading{align-items:baseline;gap:4px 12px}.gallery-heading .gallery-hint{font-size:10px}}
