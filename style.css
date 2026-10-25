@@ -200,3 +200,12 @@
 @media (max-width:700px) {
   #works .work .button { align-self:flex-end; margin:0 0 0 auto!important; text-align:center; }
 }
+
+/* Align the Profile heading with the News heading without changing the profile content inset. */
+#works .label{letter-spacing:0;word-spacing:0;white-space:normal}
+@media (max-width:700px){
+  #profile > .label{margin-left:-12px}
+}
+@media (max-width:390px){
+  #profile > .label{margin-left:-10px}
+}
