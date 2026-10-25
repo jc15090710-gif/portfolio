@@ -129,3 +129,26 @@
   .contact{padding:29px 16px 34px}
   .work h3{font-size:20px}
 }
+
+
+/* 2026-10-26: consistent English typeface across desktop and mobile. */
+:root { --latin-font: "DM Mono", monospace; }
+.logo, .logo span, .header nav a,
+.section .label, .contact .label,
+.roman-name, .profile-copy h1 .roman-name,
+.social a, .latest-grid time,
+.work-top > span:last-child { font-family: var(--latin-font); }
+/* Japanese translations next to English section headings stay in readable gothic. */
+.section .label small, .contact .label small {
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+/* Keep existing size scale: only change section alignment on phone. */
+@media (max-width:700px) {
+  #profile, #works { padding-left:12px; padding-right:12px; }
+  #profile .portrait { margin-left:auto; margin-right:auto; }
+  #works .cover-link { margin-left:auto; margin-right:auto; }
+  #profile .profile-copy, #works .work-info { width:100%; min-width:0; }
+}
+@media (max-width:390px) {
+  #profile, #works { padding-left:10px; padding-right:10px; }
+}
