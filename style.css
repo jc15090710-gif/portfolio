@@ -24,3 +24,29 @@
 .timeline-link{display:inline;color:#3d6490;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;font-weight:600}
 .timeline-link:hover{color:#1b3f66}
 @media(max-width:700px){.roman-name{margin-left:8px;font-size:.68em}.twitter-bird{width:15px;height:15px}}
+
+/* Editorial typography, matching the feel of twililight without claiming exact typeface */
+.profile-copy h1,.work h3,.contact>.label,.section .label{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;font-weight:600;letter-spacing:.035em}
+.label small{font-family:"Noto Sans JP",sans-serif;letter-spacing:0}
+.profile-copy h1 .roman-name{font-family:Georgia,serif;font-weight:400}
+.profile-copy p{max-width:34em}
+.social-svg{width:17px;height:17px;display:inline-block;flex:0 0 17px;overflow:visible;vertical-align:middle}
+.social a{display:inline-flex;align-items:center;white-space:nowrap;gap:7px;min-height:37px}
+.news-image-link{display:block;overflow:hidden;border-radius:3px}
+.news-image-link img{transition:transform .2s ease}.news-image-link:hover img{transform:scale(1.035)}
+.gallery-section{min-height:0;overflow:hidden;padding-bottom:44px}
+.gallery-window{overflow:hidden;width:100%;position:relative;mask-image:linear-gradient(to right,transparent,#000 2%,#000 98%,transparent)}
+.gallery-track{display:flex;width:max-content;animation:gallery-glide 45s linear infinite;will-change:transform}
+.gallery-group{display:flex;gap:22px;flex:none;align-items:flex-start;padding-right:22px}
+.gallery-item{width:230px;flex:none;margin:0!important;padding:0;align-self:start}
+.gallery-item img{width:100%;height:230px;object-fit:contain;background:#f4f0eb;border:1px solid var(--line);border-radius:2px}
+.gallery-item figcaption{font-size:12px;margin-top:9px;line-height:1.5;text-align:left;color:var(--muted)}
+.gallery-link{display:block;position:relative}
+.gallery-link-mark{position:absolute;bottom:8px;right:8px;padding:5px 10px;background:#253f62;color:white;border-radius:100px;font-size:11px}
+.gallery-link:hover img{filter:brightness(.94)}
+.gallery-window:hover .gallery-track,.gallery-window:focus-within .gallery-track{animation-play-state:paused}
+.gallery-hint{font-size:11px;color:var(--muted);margin:14px 0 0}
+@keyframes gallery-glide{to{transform:translateX(-50%)}}
+.form-privacy{font-size:11px;color:var(--muted);line-height:1.8}
+@media(max-width:700px){.gallery-item{width:180px}.gallery-item img{height:190px}.gallery-section{min-height:0}}
+@media(prefers-reduced-motion:reduce){.gallery-track{animation:none}.gallery-window{overflow-x:auto;mask-image:none}.gallery-group[aria-hidden="true"]{display:none}}
