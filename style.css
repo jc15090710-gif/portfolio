@@ -152,3 +152,51 @@
 @media (max-width:390px) {
   #profile, #works { padding-left:10px; padding-right:10px; }
 }
+
+/* Manual gallery, while preserving initial gentle auto-scrolling */
+.gallery-controls{display:flex;gap:8px;margin-left:auto}
+.gallery-arrow{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;color:var(--ink);background:transparent;font-size:19px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.gallery-arrow:hover,.gallery-arrow:focus-visible{background:#e9e1d6;outline-offset:2px}
+.gallery-window{overflow-x:auto;overflow-y:hidden;mask-image:none;scrollbar-width:thin;scrollbar-color:#baae9f transparent;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;cursor:grab}
+.gallery-window:active{cursor:grabbing}
+.gallery-window.manual-scroll .gallery-track{animation:none;transform:none!important}
+.gallery-window.manual-scroll .gallery-group[aria-hidden=true]{display:none}
+.gallery-window::-webkit-scrollbar{height:7px}
+.gallery-window::-webkit-scrollbar-thumb{background:#baae9f;border-radius:5px}
+.gallery-window::-webkit-scrollbar-track{background:transparent}
+/* On phone: preserve current font sizes, stack cover, title, metadata, synopsis and CTA in order. */
+@media(max-width:700px){
+  .profile-copy h1{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+  .profile-copy h1 .roman-name{display:block;margin:0;font-size:14px;line-height:1.6}
+  #profile .social{justify-content:center}
+  #profile .small-button{position:relative;left:50%;transform:translateX(-50%)}
+  #profile .profile-copy p{line-height:2.1}
+  #latest .latest-grid .button{justify-self:end;grid-column:1;margin-left:auto}
+  #works .work{display:flex;flex-direction:column;align-items:center;gap:0}
+  #works .work-info{display:contents}
+  #works .cover-link{order:1;margin:0 auto 17px;align-self:center;max-width:100%}
+  #works .cover-link img{object-position:center top}
+  #works .work h3{order:2;margin:0 0 12px;text-align:center;align-self:stretch}
+  #works .work .work-top{order:3;align-self:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;margin:0 0 7px}
+  #works .work .publisher{order:4;text-align:center;align-self:center;margin:0 0 19px;font-size:14px}
+  #works .work-info>p:not(.publisher){order:5;align-self:stretch;text-align:left;max-width:100%;margin:0 0 20px}
+  #works .work .button{order:6;align-self:flex-start;margin:0}
+  .gallery-heading{display:flex;align-items:center;flex-wrap:wrap;gap:5px 10px}
+  .gallery-heading .gallery-hint{flex-basis:100%;order:3}
+  .gallery-controls{order:2}
+  .gallery-arrow{width:38px;height:38px}
+}
+
+/* Work reading order and left CTA placement (mobile) */
+@media(max-width:700px){
+ #works .work h3{order:2;margin-bottom:7px}
+ #works .work .publisher{order:3;margin-bottom:6px}
+ #works .work .work-top{order:4;margin-bottom:19px}
+ #works .work-info>p:not(.publisher){order:5}
+ #works .work .button{order:6;align-self:flex-start;margin:0 auto 0 0!important;justify-self:start;text-align:left}
+}
+
+/* Mobile: place the work CTA at the right edge. */
+@media (max-width:700px) {
+  #works .work .button { align-self:flex-end; margin:0 0 0 auto!important; text-align:center; }
+}
